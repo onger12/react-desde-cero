@@ -1,37 +1,36 @@
 
-// Desestructuración
-// Asignación Desestructurante
-const persona = {
-    nombre: 'Tony',
-    edad: 45,
-    clave: 'Ironman'
-};
-
-// const { edad, clave, nombre, } = persona;
- 
-// console.log( nombre );
-// console.log( edad );
-// console.log( clave );
-
-const usContext = ({ clave, nombre, edad, rango = 'Capitán' }) => {
-
-
-    // console.log( nombre, edad, rango );
-    
-    return {
-        nombreClave: clave,
-        anios: edad,
-        latlng: {
-            lat: 14.1232,
-            lng: -12.3232
+export const usContext = (clave, nombre, edad, rango = 'Capitán') => {
+    //Simulaciónde un fetch a una API que haría la busqueda de un heroe a partir de la clave
+    const bool = Math.random() < 0.5;
+    if(bool)
+        {
+            return {
+                meta: {
+                    found: 'ok',
+                    time: 0.2234
+                },
+                data: {
+                    nombreClave: clave,
+                    anios: edad,
+                    latlng: {
+                        lat: 14.1232,
+                        lng: -12.3232
+                    },
+                    comics: {
+                        bla: 'bla bla bla'
+                    }
+                }
+            }
+        }else
+        {
+            return {
+                meta: {
+                    found: 'throw',
+                    time: null
+                },
+                data: {}
+            }
         }
-    }
+
 
 }
-
-const { nombreClave, anios, latlng: { lat, lng } } = usContext( persona );
-
-console.log(nombreClave, anios);
-console.log( lat, lng );
-
-
