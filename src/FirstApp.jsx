@@ -1,10 +1,11 @@
 import React from "react";
 import Counter from "./components/Counter";
 
-const FirstApp = () => {
+const FirstApp = ( { titulo, subTitulo } ) => {
     return (
         <>
-            <Counter value={2} />
+            <h1> {titulo} </h1>
+            <h2> {subTitulo} </h2>
         </>
     )
 }
