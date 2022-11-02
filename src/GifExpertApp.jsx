@@ -1,33 +1,26 @@
 import { useState } from 'react';
 import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 
 export const GifExpertApp = () => {
     
-    const [categories, setCategories] = useState([ 'League of Legends', 'Derivadas', 'World of Warcraft']);
+    const [categories, setCategories] = useState([ 'World of Warcraft']);
 
-    const onAddCategory = () => {
-        // setCategories(categories.concat('Integrales'));
-        setCategories( [ ...categories, 'Integrales' ] );
+    const onAddCategory = ( newCategory ) => {
+        if( categories.includes( newCategory ) ) return;
+        setCategories(prevCategories => [ newCategory, ...prevCategories])
     }
 
     return (
         <>
-            {/* Titulo */}
+
             <h1>GifExpertApp</h1>
 
-            {/* Buscador */}
-            <AddCategory />
+            <AddCategory onAddCategory={ onAddCategory } />
 
-            {/* Lista de gifs */}
-                {/* Gif Item */}
-            
-            <button onClick={onAddCategory} >Agregar</button>
-
-            <ol>
-                {
-                    categories.map( category => <li key={category}> { category } </li> )
-                }
-            </ol>
+            {
+                categories.map( category => <GifGrid key={category} category={category}/> )
+            }
         </>
     )
 }
