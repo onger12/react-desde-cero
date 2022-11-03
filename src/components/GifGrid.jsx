@@ -14,7 +14,7 @@ export const GifGrid = ( { category = 'Goku'} ) => {
                     <div className="card-grid">
                     {
                         gifs.map(gif => (
-                            <GifItem 
+                            <GifItem
                             key={ gif.id }
                             { ...gif } />
                             ))

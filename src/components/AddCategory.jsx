@@ -1,5 +1,5 @@
-import { useState } from "react";
 
+import { useState } from "react";
 
 export const AddCategory = ( { onAddCategory } ) => {
 
@@ -23,6 +23,7 @@ export const AddCategory = ( { onAddCategory } ) => {
       <input 
         autoFocus
         value={ inputValue }
+        placeholder="Buscar gifs..."
         onChange={ onChangeInput }
       />
     </form>
