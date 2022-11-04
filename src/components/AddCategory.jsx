@@ -19,8 +19,9 @@ export const AddCategory = ( { onAddCategory } ) => {
   }
 
   return (
-    <form onSubmit={ onSubmit }>
+    <form onSubmit={ onSubmit } aria-label="form">
       <input 
+        aria-label="search-input"
         autoFocus
         value={ inputValue }
         placeholder="Buscar gifs..."
