@@ -4,12 +4,18 @@
 export const initialState = [
     {
         id : new Date().getTime(),
-        todo: 'Robar la luna',
+        description: 'Robar la luna',
         done: false,
     },
     {
         id : new Date().getTime() * 3,
-        todo: 'Pagarle la prima a los minions',
+        description: 'Rescatar a las niñas',
+        done: false,
+    },
+    {
+        id : new Date().getTime() * 3,
+        description: 'Derrotar a vector',
         done: false,
     }
 ]
+

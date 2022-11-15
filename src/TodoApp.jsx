@@ -1,29 +1,28 @@
 
 
-import { useReducer } from 'react';
-
 import { AddTodo, TodoList } from './components';
-import { todoReducer } from './reducers';
-import { initialState } from './data';
-
-
+import { useTodo } from './hooks';
 
 export const TodoApp = () => {
 
-    const [ todos, dispatch ] = useReducer( todoReducer, initialState )
-
-    const onNewTodo = ( todo ) => {
-        console.log({ todo })
-    }
+    const { todos, onDeleteAllTodos, onModifyTodo, onNewTodo, onDeleteTodo, todosCompletados, cantidadTodos } = useTodo();
 
     return (
         <>
-            <h1>TodoApp</h1>
+            <h1>TodoApp <code>({ todos.length })</code></h1><small>Completadas: { todosCompletados }</small> <br/>
+            <button className="btn btn-warning my-2" onClick={ onDeleteAllTodos }>Limpiar</button>
             <hr/>
 
             <div className="row">
-                <TodoList todos={ todos }/>
-                <AddTodo dispatch={ dispatch } onNewTodo={ onNewTodo } />
+                <TodoList 
+                    todos={ todos } 
+                    onDeleteTodo={ onDeleteTodo }
+                    onModifyTodo={ onModifyTodo }
+                />
+                <AddTodo 
+                    onNewTodo={ onNewTodo }
+                    todos={ todos }
+                />
             </div>
         </>
     )

@@ -1,16 +1,15 @@
 
 
 export const todoReducer = ( initialState = [], action) => {
-    switch ( action.key ) {
+    switch ( action.type ) {
         case '[TODO] add todo' :
-            throw '[TODO] add todo - not implement yet'
-            break;
+            return [ action.payload, ...initialState ];
         case '[TODO] delete todo' :
-            throw '[TODO] delete todo - not implement yet'
+            return initialState.filter( todo => todo.description !== action.payload.description );
         case '[TODO] delete all todos' :
-            throw '[TODO] delete all todos - not implement yet'
+            return []
         case '[TODO] patch todo' :
-            throw '[TODO] patch todo - not implement yet'
+            return initialState.map( todo => todo.id === action.payload.id ? ({...todo, done : !action.payload.done }) : (todo));
         default:
             return initialState;
     }

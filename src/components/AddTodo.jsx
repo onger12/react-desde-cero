@@ -2,7 +2,7 @@ import { useState } from "react"
 
 
 
-export const AddTodo = ( { dispatch, onNewTodo }) => {
+export const AddTodo = ( { onNewTodo, todos }) => {
 
     const [inputValue, setInputValue] = useState('');
 
@@ -14,16 +14,18 @@ export const AddTodo = ( { dispatch, onNewTodo }) => {
     const onSubmit = ( event ) => {
         event.preventDefault()
         
-        if( inputValue === '' ) return
+        if( inputValue.trim() === '' ) return
+        if( !!(todos.find( todo => todo.description === inputValue )) ) return
         
         const todo = {
             id: new Date().getTime(),
-            todo: inputValue,
+            description: inputValue,
             done: false,
         }
 
-        // dispatch(todo);
         onNewTodo(todo);
+
+        setInputValue('');
     }
 
     return (
@@ -35,6 +37,7 @@ export const AddTodo = ( { dispatch, onNewTodo }) => {
                     className="form-control"
                     value={ inputValue }
                     onChange={ onChangeInput }
+                    autoFocus
                 />
                 <button className="btn btn-outline-primary my-2">Agregar</button>
             </form>
