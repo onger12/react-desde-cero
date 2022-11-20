@@ -1,0 +1,31 @@
+
+.card-img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-detail--card-img{
+    width: 50%;
+    margin: 0 auto;
+    padding: 12px 0;
+}
+
+.hero-detail--card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero-detail--card-text p{
+    font-size: 28px;
+}
+
+.hero-detail--btn-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.hero-detail--btn-container button{
+    align-self: flex-end;
+}
