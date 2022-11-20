@@ -1,31 +1,32 @@
-
-.card-img{
-    height: 100%;
-    object-fit: cover;
+.heroes-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.heroe-card{
+    padding: 12px;
+    width: 100%;
 }
 
-.hero-detail--card-img{
-    width: 50%;
-    margin: 0 auto;
-    padding: 12px 0;
-}
-
-.hero-detail--card-text {
+.search-page{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
-.hero-detail--card-text p{
-    font-size: 28px;
+.search-page--form{
+    width: 65%;
+    margin: 0 auto;
 }
-
-.hero-detail--btn-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+.heroe-buscado-card{
+    width: 70%;
+    margin: 0 auto;
 }
 
-.hero-detail--btn-container button{
-    align-self: flex-end;
+@media screen and (min-width: 700px) {
+    .heroe-card{
+        width: 50%;
+    }
+    .search-page{
+        flex-direction: row;
+    }
 }

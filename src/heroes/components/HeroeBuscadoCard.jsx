@@ -10,7 +10,7 @@ export const HeroeBuscadoCard = ({
     const imgUrl = `/assets/${ id }.jpg`;
 
     return (
-        <div className="container my-4 animate__animated animate__fadeInRight">
+        <div className="heroe-buscado-card my-4 animate__animated animate__fadeInRight">
             <h3>{ superhero }</h3>
             <p className="my-0">{ alter_ego }</p>
             <p>{ publisher }</p>

@@ -13,9 +13,9 @@ export const SearchPage = () => {
     
 
     return (
-        <div className="row">
+        <div className="search-page">
+            <div className="search-page--form">
             <h1 className="my-3">Buscar</h1>
-            <div className="col-7">
                 <form onSubmit={ e => { e.preventDefault() } }>
                     <input 
                         className="form-control"
@@ -28,7 +28,7 @@ export const SearchPage = () => {
                     />
                 </form>
             </div>
-            <div className="col-5">
+            <div className="search-page--results">
                 <HeroesBuscados heroes={ heroes } sinResultados={ sinResultados } />
             </div>
         </div>
