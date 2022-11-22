@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { CharGrid } from "./CharGrid";
+
+
 import { CharacterItem } from "./components/CharacterItem";
 import { useCounter } from "../hooks/useCounter";
 import { useFetch } from "../hooks/useFetch"

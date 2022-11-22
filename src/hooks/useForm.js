@@ -13,6 +13,8 @@ export const useForm = ( initialState ) => {
             ...formState,
             [ name ] : value,
         });
+
+        console.log({ value, name });
     }
 
     return {
